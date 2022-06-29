@@ -11,6 +11,8 @@ const Cliente = db.define(
 
     phone: DataTypes.INTEGER,
 
+    email: DataTypes.STRING,
+
     age: DataTypes.INTEGER,
 
     state: DataTypes.STRING,

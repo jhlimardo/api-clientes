@@ -4,7 +4,7 @@ const Cliente = require("../models/Clientes.js");
 const getAllClients = async (req, res) => {
   try {
     const clientes = await Cliente.findAll({
-      attributes: ["id", "name", "lastName", "phone", "age", "state"],
+      attributes: ["id", "name", "lastName", "phone", "email", "age", "state"],
     });
     res.json(clientes);
   } catch (err) {
@@ -19,7 +19,7 @@ const getClientById = async (req, res) => {
   try {
     const id = req.params.id;
     const cliente = await Cliente.findByPk(id, {
-      attributes: ["id", "name", "lastName", "phone", "age", "state"],
+      attributes: ["id", "name", "lastName", "phone", "email", "age", "state"],
     });
     res.json(cliente);
   } catch (error) {
@@ -31,11 +31,12 @@ const getClientById = async (req, res) => {
 const createClient = async (req, res) => {
  
   try {
-    const {name, lastName, phone, age, state} = req.body;
+    const {name, lastName, phone, email, age, state} = req.body;
     const newCliente = await Cliente.create({
         name,
         lastName,
         phone,
+        email,
         age,
         state
       });
