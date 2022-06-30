@@ -19,11 +19,11 @@ React | Axios | JavaScript
 
 ##### Endpoints:
 
-- Get: http://localhost:3001/clients
-- Get by Id: http://localhost:3001/clients/:id
-- Post: http://localhost:3001/clients
-- Delete: http://localhost:3001/clients/:id
-- Patch: http://localhost:3001/clients/:id
+- Get: http://localhost:3001/clients | https://edb.joselimardo.com/clients
+- Get by Id: http://localhost:3001/clients/:id | https://edb.joselimardo.com/clients/:id
+- Post: http://localhost:3001/clients | https://edb.joselimardo.com/clients
+- Delete: http://localhost:3001/clients/:id | https://edb.joselimardo.com/clients/:id
+- Patch: http://localhost:3001/clients/:id | https://edb.joselimardo.com/clients/:id
 
 ##### Notas:
 
