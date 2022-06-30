@@ -24,10 +24,9 @@ const AddClient = () => {
     age: "",
     state: "",
   });
-
+  
   const saveClient = async (e) => {
     e.preventDefault();
-
     await axios.post("/clients", {
       name: client.name,
       lastName: client.lastName,
@@ -35,6 +34,14 @@ const AddClient = () => {
       email: client.email,
       age: client.age,
       state: selectOption.value,
+    });
+    setClient({
+      name: "",
+      lastName: "",
+      phone: "",
+      email: "",
+      age: "",
+      state: "",
     });
     navigate("/");
   };
@@ -124,6 +131,7 @@ const AddClient = () => {
               onChange={(e) => {
                 handleChange(e);
               }}
+              pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
             />
           </div>
           <div className="mb-3">
