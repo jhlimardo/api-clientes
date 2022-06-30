@@ -35,7 +35,7 @@ React | Axios | JavaScript
 - - realizar "npm i"  dentro de las carpetas /api y /client
 - - npm start en c/u de las carpetas
 
-- Por un tema lógico de tiempo he utilizdo he utilizado Bootstrap en la UI para los estilos (de manera básica)
+- Por un tema lógico de tiempo he utilizado Bootstrap en la UI para los estilos (de manera básica)
 
 ##### Deploy:
 
