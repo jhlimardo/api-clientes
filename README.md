@@ -27,7 +27,7 @@ React | Axios | JavaScript
 
 ##### Notas:
 
-- Es un CRUD básico de clientes con formulario conrolado en React (sin validaciones)
+- Es un CRUD básico de clientes con formulario controlado en React (sin validaciones)
 
 - Para correlo localmente:
 - - Clonar el repositorio
