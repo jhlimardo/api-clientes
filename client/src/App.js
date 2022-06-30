@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home"
 import AddClient from "./components/AddClient"
+import EditClient from "./components/EditClient"
+import ClientDetail from "./components/ClientDetail"
 
 function App() {
   return (
@@ -11,11 +13,11 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />}/>
 
-            {/* <Route exact path="/:id" element={<ProductDetail />}/> */}
+            <Route exact path="/:id" element={<ClientDetail />}/>
               
             <Route exact path="/add" element={<AddClient />}/>
    
-            {/* <Route exact path="/edit/:id" element={<EditProduct />}/> */}
+            <Route exact path="/edit/:id" element={<EditClient />}/>
             
           </Routes>
         </div>

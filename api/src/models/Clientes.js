@@ -16,6 +16,8 @@ const Cliente = db.define(
     age: DataTypes.INTEGER,
 
     state: DataTypes.STRING,
+
+    date: DataTypes.DATEONLY,
   },
 
   {

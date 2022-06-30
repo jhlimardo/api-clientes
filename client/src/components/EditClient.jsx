@@ -1,7 +1,7 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 import Select from "react-select";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "./NavBar";
 
 const options = [
@@ -13,7 +13,8 @@ const options = [
   { value: "bajo potencial", label: "Bajo potencial" },
 ];
 
-const AddClient = () => {
+const EditClient = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
   const [selectOption, setSelectOption] = useState(null);
   const [client, setClient] = useState({
@@ -25,10 +26,9 @@ const AddClient = () => {
     state: "",
   });
 
-  const saveClient = async (e) => {
+  const updateClient = async (e) => {
     e.preventDefault();
-
-    await axios.post("/clients", {
+    await axios.patch(`/clients/${id}`, {
       name: client.name,
       lastName: client.lastName,
       phone: client.phone,
@@ -38,6 +38,15 @@ const AddClient = () => {
     });
     navigate("/");
   };
+
+  const getClientById = async () => {
+    const response = await axios.get(`/clients/${id}`);
+    setClient(response.data);
+  };
+
+  useEffect(() => {
+    getClientById();
+  }, []);
 
   const handleChange = (e) => {
     //e.persist();
@@ -150,6 +159,7 @@ const AddClient = () => {
             <Select
               id="state"
               name="state"
+              placeholder={client.state}
               value={selectOption}
               options={options}
               onChange={setSelectOption}
@@ -158,11 +168,11 @@ const AddClient = () => {
 
           <div className="field">
             <button
-              onClick={saveClient}
+              onClick={updateClient}
               type="button"
               className="btn btn-primary"
             >
-              Guardar
+              Update
             </button>
           </div>
         </form>
@@ -171,4 +181,4 @@ const AddClient = () => {
   );
 };
 
-export default AddClient;
+export default EditClient;
